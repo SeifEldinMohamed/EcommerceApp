@@ -4,6 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/font/font.xml" value="0.1" />
+        <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/activity_main.xml" value="0.17777777777777778" />
+        <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_cart.xml" value="0.1" />
+        <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_favourites.xml" value="0.1" />
+        <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_home.xml" value="0.1" />
+        <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_intro.xml" value="0.152" />
+        <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_product_details.xml" value="0.1" />
+        <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_registration.xml" value="0.1" />
       </map>
     </option>
   </component>
