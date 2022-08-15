@@ -1,14 +1,11 @@
-package com.seif.ecommerceapp.ui
+package com.seif.ecommerceapp.ui.homefragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.ui.AppBarConfiguration
-import com.seif.ecommerceapp.R
 import com.seif.ecommerceapp.databinding.FragmentHomeBinding
-
 
 class HomeFragment : Fragment() {
 lateinit var binding: FragmentHomeBinding

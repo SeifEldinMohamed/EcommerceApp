@@ -15,4 +15,8 @@
     <string name="cart">Cart</string>
     <string name="profile">Profile</string>
     <string name="cart_image_description">cart image description</string>
+    <string name="product_name">Product Name</string>
+    <string name="_100">100$</string>
+    <string name="product_image_description">product image description</string>
+    <string name="favourite_image_description">favourite image description</string>
 </resources>
