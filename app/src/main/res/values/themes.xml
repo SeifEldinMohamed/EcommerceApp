@@ -10,4 +10,11 @@
         <item name="android:windowLightStatusBar">true</item>
 
     </style>
+    
+    <style name="splashScreenTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_image</item>
+        <item name="android:statusBarColor">@color/blue</item>
+
+    </style>
+    
 </resources>

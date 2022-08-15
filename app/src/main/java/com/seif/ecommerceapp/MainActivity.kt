@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_EcommerceApp)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
