@@ -18,8 +18,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_48ssp"
-            android:inputType="none"
+            android:layout_height="@dimen/_49ssp"
+            android:enabled="false"
             android:text="@string/username" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -27,8 +27,8 @@
         android:id="@+id/textField1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="136dp"
-        android:layout_marginBottom="13dp"
+        android:layout_marginTop="@dimen/_112sdp"
+        android:layout_marginBottom="@dimen/_1sdp"
         android:hint="@string/label"
         app:layout_constraintBottom_toTopOf="@+id/textField"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,8 +36,8 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_48ssp"
-            android:inputType="none"
+            android:layout_height="@dimen/_49ssp"
+            android:enabled="false"
             android:text="@string/email" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -56,8 +56,9 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_48ssp"
-            android:inputType="none"
+            android:layout_height="@dimen/_49ssp"
+            android:enabled="false"
+
             android:text="@string/address" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -141,7 +142,7 @@
         app:layout_constraintVertical_bias="0.865" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:layout_width="414dp"
+        android:layout_width="@dimen/_319sdp"
         android:layout_height="66dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
