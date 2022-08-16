@@ -22,14 +22,12 @@ class CartAdapter(private val listdata: ArrayList<CartData>):
             binding.textView2.text = listdata.name
             binding.textView.text = listdata.totalprice().toString()
             binding.imageView.setImageResource(R.drawable.ic_email)
-            Log.d("here",listdata.name)
 
         }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        Log.d("here","ok")
         return ViewHolder(
             CartRowBinding.inflate(
             LayoutInflater.from(parent.context),
@@ -41,7 +39,6 @@ class CartAdapter(private val listdata: ArrayList<CartData>):
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
         holder.bind(listdata[position])
-        Log.d("here",listdata[position].name)
 
     }
 
