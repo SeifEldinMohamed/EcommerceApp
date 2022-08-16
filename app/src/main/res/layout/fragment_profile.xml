@@ -20,6 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:drawableEnd="@drawable/ic_person"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_49ssp"
             android:enabled="false"
@@ -40,6 +41,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:drawableEnd="@drawable/ic_email"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_49ssp"
             android:enabled="false"
@@ -63,6 +65,7 @@
         app:layout_constraintVertical_bias="0.748">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:drawableEnd="@drawable/ic_home_location"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_49ssp"
             android:enabled="false"
