@@ -22,6 +22,9 @@
         <action
             android:id="@+id/action_productDetailsFragment_to_cartFragment"
             app:destination="@id/cartFragment" />
+        <argument
+            android:name="product"
+            app:argType="com.seif.ecommerceapp.data.remote.models.Product" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment"

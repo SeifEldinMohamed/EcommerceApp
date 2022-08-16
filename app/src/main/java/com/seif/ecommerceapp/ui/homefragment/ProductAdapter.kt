@@ -2,8 +2,10 @@ package com.seif.ecommerceapp.ui.homefragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.seif.ecommerceapp.R
 import com.seif.ecommerceapp.data.remote.models.Product
 import com.seif.ecommerceapp.databinding.ItemProductRowBinding
 import com.seif.ecommerceapp.utils.ProductsDiffUtil
@@ -16,6 +18,11 @@ class ProductAdapter: RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
             binding.tvProductName.text = product.name
             binding.tvPrice.text = product.price
             Picasso.get().load(product.image).into(binding.ivProduct)
+
+            binding.cvProduct.setOnClickListener {
+                val action = HomeFragmentDirections.actionHomeFragmentToProductDetailsFragment(product)
+                 binding.root.findNavController().navigate(action)
+            }
         }
     }
 
