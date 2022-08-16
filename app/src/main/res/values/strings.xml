@@ -13,6 +13,8 @@
     <string name="hello_username">Hello UserName</string>
     <string name="home">Home</string>
     <string name="cart">Cart</string>
+    <string name="clothcart">ClothCart</string>
+    <string name="welcomemsg">Discover the latest trends in fashion</string>
     <string name="profile">Profile</string>
     <string name="cart_image_description">cart image description</string>
     <string name="product_name">Product Name</string>
