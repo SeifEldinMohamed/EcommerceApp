@@ -1,4 +1,4 @@
-package com.seif.ecommerceapp.ui
+package com.seif.ecommerceapp.ui.profilefragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

@@ -1,4 +1,4 @@
-package com.seif.ecommerceapp.ui
+package com.seif.ecommerceapp.ui.productdetailsfragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

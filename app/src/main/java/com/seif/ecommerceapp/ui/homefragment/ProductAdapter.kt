@@ -2,9 +2,11 @@ package com.seif.ecommerceapp.ui.homefragment
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.seif.ecommerceapp.data.remote.models.Product
 import com.seif.ecommerceapp.databinding.ItemProductRowBinding
+import com.seif.ecommerceapp.utils.ProductsDiffUtil
 import com.squareup.picasso.Picasso
 
 class ProductAdapter: RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
@@ -34,7 +36,9 @@ class ProductAdapter: RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
     override fun getItemCount()= products.size
 
     fun addProducts(newProducts: List<Product>){
+        val diffUtilCallBack = ProductsDiffUtil(this.products, newProducts)
+        val result = DiffUtil.calculateDiff(diffUtilCallBack)
         this.products = newProducts
-        notifyDataSetChanged()
+        result.dispatchUpdatesTo(this)
     }
 }

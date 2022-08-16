@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/introFragment"
-        android:name="com.seif.ecommerceapp.ui.IntroFragment"
+        android:name="com.seif.ecommerceapp.ui.introfragment.IntroFragment"
         android:label="fragment_intro"
         tools:layout="@layout/fragment_intro" >
         <action
@@ -19,12 +19,12 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.seif.ecommerceapp.ui.LoginFragment"
+        android:name="com.seif.ecommerceapp.ui.loginfragment.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/rigestrationFragment"
-        android:name="com.seif.ecommerceapp.ui.RegistrationFragment"
+        android:name="com.seif.ecommerceapp.ui.registrationfragment.RegistrationFragment"
         android:label="fragment_rigestration"
         tools:layout="@layout/fragment_registration" />
 </navigation>

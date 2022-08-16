@@ -1,4 +1,4 @@
-package com.seif.ecommerceapp.ui
+package com.seif.ecommerceapp.ui.loginfragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.seif.ecommerceapp.HomeActivity
-import com.seif.ecommerceapp.R
 import com.seif.ecommerceapp.databinding.FragmentLoginBinding
 
 
