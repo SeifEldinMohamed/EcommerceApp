@@ -12,7 +12,6 @@ class StartActivity : AppCompatActivity() {
     lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setTheme(R.style.Theme_EcommerceApp)
         binding = ActivityStartBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

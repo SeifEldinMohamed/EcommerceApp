@@ -19,4 +19,17 @@
     <string name="_100">100$</string>
     <string name="product_image_description">product image description</string>
     <string name="favourite_image_description">favourite image description</string>
+    <string name="back_arrow_image_description">back arrow image description</string>
+    <string name="product_details_image_description">product image description</string>
+    <string name="lorem_text_product_details">One occult blessing i give you: acquire each other. One occult blessing i give you: acquire each other. One occult blessing i give you: acquire each other.</string>
+    <string name="color">Color</string>
+    <string name="your_size">Your Size</string>
+    <string name="amount">Amount</string>
+    <string name="s">S</string>
+    <string name="m">M</string>
+    <string name="l">L</string>
+    <string name="_plus">+</string>
+    <string name="_minus">-</string>
+    <string name="_1">1</string>
+    <string name="add_to_cart">Add To Cart</string>
 </resources>
