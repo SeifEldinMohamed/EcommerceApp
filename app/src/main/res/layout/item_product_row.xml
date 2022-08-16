@@ -7,7 +7,7 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cv_product"
-        android:layout_width="@dimen/_155sdp"
+        android:layout_width="@dimen/_135sdp"
         android:layout_height="@dimen/_170sdp"
         android:layout_marginTop="@dimen/_6sdp"
         android:layout_marginBottom="@dimen/_6sdp"
@@ -29,8 +29,10 @@
                 android:id="@+id/iv_product"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/_110sdp"
+                android:scaleType="centerCrop"
                 android:contentDescription="@string/product_image_description"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="ImageContrastCheck"
@@ -45,7 +47,7 @@
                 android:fontFamily="@font/roboto_bold"
                 android:text="@string/product_name"
                 android:textColor="@color/dark_gray"
-                android:textSize="@dimen/_14ssp"
+                android:textSize="@dimen/_12ssp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_product" />
 

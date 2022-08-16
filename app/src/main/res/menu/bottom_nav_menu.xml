@@ -9,7 +9,7 @@
     <item
         android:id="@+id/cartFragment"
         android:title="@string/cart"
-        android:icon="@drawable/ic_shopping_cart"/>
+        android:icon="@drawable/ic_shopping_cart_nav"/>
     <item
         android:id="@+id/profileFragment"
         android:title="@string/profile"
