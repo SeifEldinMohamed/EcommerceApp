@@ -10,40 +10,41 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.seif.ecommerceapp.R
 import com.seif.ecommerceapp.data.remote.models.CartData
+import com.seif.ecommerceapp.data.remote.models.Product
 import com.seif.ecommerceapp.databinding.CartRowBinding
+import com.seif.ecommerceapp.databinding.ItemProductRowBinding
 
 
-class CartAdapter(private val listdata: List<CartData>):
+class CartAdapter(private val listdata: ArrayList<CartData>):
     RecyclerView.Adapter<CartAdapter.ViewHolder>() {
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private lateinit var binding : CartRowBinding
+    class ViewHolder(private val binding: CartRowBinding) : RecyclerView.ViewHolder(binding.root) {
+        fun bind(listdata: CartData) {
+            binding.textView2.text = listdata.name
+            binding.textView.text = listdata.totalprice().toString()
+            binding.imageView.setImageResource(R.drawable.ic_email)
+            Log.d("here",listdata.name)
 
-        val tvName: TextView
-        val tvDetails:TextView
-        val ivclothes:ImageView
-
-        init {
-            tvName = view.findViewById<TextView>(R.id.textView2)
-            tvDetails = view.findViewById<TextView>(R.id.textView)
-            ivclothes = view.findViewById<ImageView>(R.id.imageView)
         }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.cart_row, parent, false)
-
-        return ViewHolder(view)
+        Log.d("here","ok")
+        return ViewHolder(
+            CartRowBinding.inflate(
+            LayoutInflater.from(parent.context),
+            parent,
+            false
+        ),)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val cart_item = listdata[position]
-        holder.tvName.text = cart_item.name
-        Log.d("here",cart_item.name)
+
+        holder.bind(listdata[position])
+        Log.d("here",listdata[position].name)
 
     }
 
-    override fun getItemCount(): Int = listdata.size
+    override fun getItemCount()= listdata.size
 }
 

@@ -7,12 +7,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.seif.ecommerceapp.R
 import com.seif.ecommerceapp.data.remote.models.CartData
 import com.seif.ecommerceapp.databinding.FragmentCartBinding
 import com.seif.ecommerceapp.utils.CartAdapter
-import dagger.hilt.android.qualifiers.ApplicationContext
+
 
 class CartFragment : Fragment() {
 
@@ -22,25 +20,23 @@ class CartFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-
-        return inflater.inflate(R.layout.fragment_cart, container, false)
+        binding = FragmentCartBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentCartBinding.inflate(layoutInflater)
-        val myListData: List<CartData> = List<CartData>(10){CartData("boom","boom",3,2.5)}
+        val myListData: ArrayList<CartData> = ArrayList<CartData>()
+        myListData.add(CartData("boom","boom",3,1.5))
+        myListData.add(CartData("boom","boom",3,1.5))
+        myListData.add(CartData("boom","boom",3,1.5))
 
+        binding.rvCart.setHasFixedSize(true)
+        binding.rvCart.layoutManager = LinearLayoutManager(requireContext())
 
-        val recyclerView =  binding.recyclerView
-        val adapter = CartAdapter(myListData)
-
-        //recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = LinearLayoutManager(this@CartFragment.context)
-
-        recyclerView.adapter = adapter
+        binding.rvCart.adapter = CartAdapter(myListData)
 
 
     }
