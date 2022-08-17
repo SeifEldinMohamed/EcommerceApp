@@ -15,15 +15,16 @@
         <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/activity_home.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/activity_main.xml" value="0.17777777777777778" />
         <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/activity_start.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/custom_loading_dialog.xml" value="0.264" />
         <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_cart.xml" value="0.1" />
         <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_favourites.xml" value="0.1" />
         <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_home.xml" value="0.2" />
         <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_intro.xml" value="0.152" />
         <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_login.xml" value="0.264" />
-        <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_product_details.xml" value="0.4" />
+        <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_product_details.xml" value="0.264" />
         <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_profile.xml" value="0.264" />
         <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/fragment_registration.xml" value="0.2" />
-        <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/item_product_row.xml" value="0.2" />
+        <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/layout/item_product_row.xml" value="0.536" />
         <entry key="..\:/Users/96654/EcommerceApp/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20729166666666668" />
       </map>
     </option>

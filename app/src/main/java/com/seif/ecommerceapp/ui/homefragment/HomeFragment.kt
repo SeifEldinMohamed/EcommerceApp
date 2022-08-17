@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.seif.ecommerceapp.data.remote.models.Product
 import com.seif.ecommerceapp.databinding.FragmentHomeBinding
 import com.seif.ecommerceapp.utils.NetworkResult
-import com.seif.ecommerceapp.utils.observeOnce
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
