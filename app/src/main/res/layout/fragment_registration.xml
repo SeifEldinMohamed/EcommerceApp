@@ -106,7 +106,7 @@
                     android:id="@+id/et_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:drawableEnd="@drawable/ic_email"
+                    android:drawableEnd="@drawable/ic_home_location"
                     android:inputType="text"
                     tools:ignore="TextContrastCheck">
 

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/introFragment">
+    app:startDestination="@id/registrationFragment">
 
     <fragment
         android:id="@+id/introFragment"
@@ -21,7 +21,11 @@
         android:id="@+id/loginFragment"
         android:name="com.seif.ecommerceapp.ui.loginfragment.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_registrationFragment"
+            app:destination="@id/registrationFragment" />
+    </fragment>
     <fragment
         android:id="@+id/registrationFragment"
         android:name="com.seif.ecommerceapp.ui.registrationfragment.RegistrationFragment"

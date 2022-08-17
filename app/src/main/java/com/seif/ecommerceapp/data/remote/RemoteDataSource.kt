@@ -1,10 +1,10 @@
 package com.seif.ecommerceapp.data.remote
 
-import com.seif.ecommerceapp.data.remote.models.Product
-import com.seif.ecommerceapp.data.remote.models.SignupRequest
-import com.seif.ecommerceapp.data.remote.models.SignupResponse
+import android.util.Log
+import com.seif.ecommerceapp.data.remote.models.*
 import com.seif.ecommerceapp.utils.NetworkResult
 import retrofit2.Response
+import retrofit2.http.Body
 import javax.inject.Inject
 
 class RemoteDataSource @Inject constructor(
@@ -47,7 +47,35 @@ class RemoteDataSource @Inject constructor(
                     NetworkResult.Success(it)
                 }
             }
-            else -> NetworkResult.Error(response.message()+ response.code() + response.errorBody()+ response.body())
+            else -> {
+                Log.d("register", "response Message: ${response.message()}")
+                Log.d("register", "response code: ${response.code()}")
+                Log.d("register", "response error body: ${response.errorBody()}")
+                Log.d("register", "response body: ${response.body()}")
+                Log.d("register", "response header: ${response.headers()}")
+                NetworkResult.Error(response.message() + response.code() + response.errorBody() + response.body())
+            }
+        }
+    }
+
+    suspend fun loginUser(user: LoginRequest): NetworkResult<LoginResponse>? {
+        val response: Response<LoginResponse> = productsApi.loginUser(user)
+        return handleLoginUserResponse(response)
+    }
+
+    private fun handleLoginUserResponse(response: Response<LoginResponse>): NetworkResult<LoginResponse>? {
+        return when {
+            response.message().toString().contains("timeout") -> NetworkResult.Error("Timeout")
+            response.code() == 404 -> NetworkResult.Error("Not Found")
+
+            response.isSuccessful -> { // we will return trending repositories from api
+                response.body()?.let {
+                    NetworkResult.Success(it)
+                }
+            }
+            else -> {
+                NetworkResult.Error(response.message() + response.code())
+            }
         }
     }
 }

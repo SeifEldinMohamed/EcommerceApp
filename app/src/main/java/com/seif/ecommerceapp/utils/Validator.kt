@@ -12,7 +12,7 @@ fun String.isEmail():Boolean{
 }
 
 fun String.isPassword(): Boolean {
-    return this.isNotEmpty()
+    return this.isNotEmpty() && this.length >= 8
 }
 
 fun String.fromArabic(): String {

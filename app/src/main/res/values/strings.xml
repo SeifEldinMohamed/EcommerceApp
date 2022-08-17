@@ -35,4 +35,5 @@
     <string name="_minus">-</string>
     <string name="_1">1</string>
     <string name="add_to_cart">Add To Cart</string>
+    <string name="profile_image_description">profile image description</string>
 </resources>

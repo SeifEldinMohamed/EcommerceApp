@@ -10,8 +10,8 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import com.seif.ecommerceapp.data.remote.models.Product
 import com.seif.ecommerceapp.databinding.FragmentHomeBinding
-import com.seif.ecommerceapp.utils.CommonFunctions
 import com.seif.ecommerceapp.utils.NetworkResult
+import com.seif.ecommerceapp.utils.observeOnce
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -32,13 +32,12 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         homeViewModel = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
 
-        requestProducts()
+        observeProducts()
         setUpRecyclerView()
 
     }
 
-    private fun requestProducts() {
-        homeViewModel.fetchProducts()
+    private fun observeProducts() {
         homeViewModel.productsResponse.observe(requireActivity()){
             it?.let {
                 handleNetworkResponse(it)
@@ -46,12 +45,12 @@ class HomeFragment : Fragment() {
         }
     }
 
+
     private fun handleNetworkResponse(response: NetworkResult<List<Product>>) {
         when (response) {
             is NetworkResult.Success -> {
                 response.data?.let {
-                    CommonFunctions.showSnackBar(binding.root, it.toString())
-                    Log.d("products", "created successfully ${it.toString()}")
+                    Log.d("products", "observe data ${it.toString()}")
                     productsAdapter.addProducts(it)
                 }
             }

@@ -31,22 +31,30 @@ class RegistrationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        registrationViewModel = ViewModelProvider(requireActivity())[RegistrationViewModel::class.java]
-
+        registrationViewModel =
+            ViewModelProvider(requireActivity())[RegistrationViewModel::class.java]
 
         binding.btnRegister.setOnClickListener {
-            val email = binding.etEmail.text.toString()
-            val password = binding.etPassword.text.toString()
-            val name = binding.etUsername.text.toString()
-            val user = SignupRequest(email, name, password)
+            registerUser()
+        }
 
-            if (validateUserInput(name, email, password)) {
-                registrationViewModel.createUser(user)
-                observeCreateUserResponse()
-            }
-            else {
-                Log.d("register","not valid input")
-            }
+        binding.tvLogin.setOnClickListener {
+            binding.root.findNavController()
+                .navigate(R.id.action_registrationFragment_to_loginFragment)
+        }
+    }
+
+    private fun registerUser() {
+        val email = binding.etEmail.text.toString()
+        val password = binding.etPassword.text.toString()
+        val name = binding.etUsername.text.toString()
+        val user = SignupRequest(email, name, password)
+
+        if (validateUserInput(name, email, password)) {
+            registrationViewModel.createUser(user)
+            observeCreateUserResponse()
+        } else {
+            Log.d("register", "not valid input")
         }
     }
 
@@ -63,22 +71,20 @@ class RegistrationFragment : Fragment() {
         when (response) {
             is NetworkResult.Success -> {
                 response.data?.let {
-                    showSnackBar(binding.root, it.toString())
+                    showSnackBar(binding.root, "Account Created Successfully")
                     Log.d("register", "created successfully ${it.toString()}")
-                    binding.root.findNavController().navigate(R.id.action_registrationFragment_to_loginFragment)
-//                    startActivity(Intent(requireContext(), HomeActivity::class.java))
-//                    requireActivity().finish()
+                    binding.root.findNavController()
+                        .navigate(R.id.action_registrationFragment_to_loginFragment)
                 }
             }
             is NetworkResult.Loading -> {
                 Log.d("register", "loading")
             }
             is NetworkResult.Error -> {
-                Log.d("register", "Error: ${response.message}")
+                Log.d("register", "from handleNetworkResponse -> Error: ${response.message}")
             }
         }
     }
-
 
     private fun validateUserInput(username: String, email: String, password: String): Boolean {
         return username.isUsername() && email.isEmail() && password.isPassword()

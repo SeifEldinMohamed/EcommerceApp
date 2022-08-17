@@ -1,7 +1,10 @@
 package com.seif.ecommerceapp.data.remote.models
 
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
 data class LoginResponse(
-    val username:String,
-    val email: String,
-    val token:String
-)
+    val token:String,
+    val email: String
+): Parcelable
