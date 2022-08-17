@@ -48,6 +48,8 @@
                 android:layout_marginTop="@dimen/_11sdp"
                 android:layout_marginEnd="@dimen/_20sdp"
                 android:hint="@string/password"
+                app:helperTextEnabled="true"
+                app:helperText="*password must be 8 characters"
                 app:endIconMode="password_toggle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -58,7 +60,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    tools:ignore="TextContrastCheck">
+                    tools:ignore="TextContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck">
 
                 </com.google.android.material.textfield.TextInputEditText>
 
@@ -83,7 +85,7 @@
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/ic_person"
                     android:inputType="textPersonName"
-                    tools:ignore="TextContrastCheck">
+                    tools:ignore="TextContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck">
 
                 </com.google.android.material.textfield.TextInputEditText>
 
@@ -108,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/ic_home_location"
                     android:inputType="text"
-                    tools:ignore="TextContrastCheck">
+                    tools:ignore="TextContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck">
 
                 </com.google.android.material.textfield.TextInputEditText>
 
@@ -133,7 +135,7 @@
                     android:layout_height="wrap_content"
                     android:drawableEnd="@drawable/ic_email"
                     android:inputType="textEmailAddress"
-                    tools:ignore="TextContrastCheck">
+                    tools:ignore="TextContrastCheck,TouchTargetSizeCheck,SpeakableTextPresentCheck">
 
                 </com.google.android.material.textfield.TextInputEditText>
 
@@ -158,7 +160,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"
-                    tools:ignore="TextContrastCheck">
+                    tools:ignore="TextContrastCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck">
 
                 </com.google.android.material.textfield.TextInputEditText>
 

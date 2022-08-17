@@ -99,6 +99,7 @@ class LoginFragment : Fragment() {
                     "from handleNetworkResponse -> Error: ${response.message} ${response.data.toString()}"
                 )
                 dismissLoadingDialog()
+                showSnackBar(binding.root, "Invalid Email/Password !")
             }
         }
     }
@@ -107,7 +108,7 @@ class LoginFragment : Fragment() {
         return email.isEmail() && password.isPassword()
     }
 
-    fun createAlertDialog() {
+    private fun createAlertDialog() {
         val builder = AlertDialog.Builder(requireContext())
         builder.setView(layoutInflater.inflate(R.layout.custom_loading_dialog, null))
         builder.setCancelable(true)

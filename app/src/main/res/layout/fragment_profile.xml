@@ -101,21 +101,21 @@
         android:layout_width="@dimen/_110sdp"
         android:layout_height="@dimen/_110sdp"
         android:scaleType="fitCenter"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:contentDescription="@string/profile_image_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar4"
         tools:ignore="ImageContrastCheck"
-        android:src="@drawable/ic_shopping_cart" />
+        android:src="@drawable/ic_profile_pic" />
 
     <TextView
         android:id="@+id/tv_signout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:fontFamily="@font/roboto_regular"
+        android:fontFamily="@font/roboto_medium"
         android:text="@string/signout"
         android:padding="@dimen/_12sdp"
         android:textSize="@dimen/_14ssp"
@@ -125,22 +125,6 @@
         app:layout_constraintEnd_toEndOf="@+id/iv_profile"
         app:layout_constraintStart_toStartOf="@+id/iv_profile"
         app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
-
-    <Button
-        android:id="@+id/btn_save"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/save"
-        android:enabled="false"
-        android:textSize="@dimen/_15ssp"
-        android:paddingTop="@dimen/_12sdp"
-        android:paddingBottom="@dimen/_12sdp"
-        android:backgroundTint="@color/blue"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textField" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

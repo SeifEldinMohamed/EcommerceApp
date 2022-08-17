@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.seif.ecommerceapp.R
@@ -21,6 +22,8 @@ import dagger.hilt.android.AndroidEntryPoint
 class RegistrationFragment : Fragment() {
     lateinit var binding: FragmentRegistrationBinding
     lateinit var registrationViewModel: RegistrationViewModel
+    lateinit var dialog: AlertDialog
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,10 +35,12 @@ class RegistrationFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        AppSharedPreference.init(requireContext())
         registrationViewModel =
             ViewModelProvider(requireActivity())[RegistrationViewModel::class.java]
 
         binding.btnRegister.setOnClickListener {
+            createAlertDialog()
             registerUser()
         }
 
@@ -48,17 +53,18 @@ class RegistrationFragment : Fragment() {
     private fun registerUser() {
         val email = binding.etEmail.text.toString()
         val password = binding.etPassword.text.toString()
+        val confirmPassword = binding.etConfirmPassword.text.toString()
         val name = binding.etUsername.text.toString()
         val user = SignupRequest(email, name, password)
 
         val address = binding.etAddress.text.toString()
         AppSharedPreference.writeStringFromSharedPreference("address", address)
 
-        if (validateUserInput(name, email, password)) {
+        if (validateUserInput(name, email, password,confirmPassword)) {
             registrationViewModel.createUser(user)
             observeCreateUserResponse()
         } else {
-            Log.d("register", "not valid input")
+            showSnackBar(binding.root, "Please Enter a Valid Input !")
         }
     }
 
@@ -75,6 +81,7 @@ class RegistrationFragment : Fragment() {
         when (response) {
             is NetworkResult.Success -> {
                 response.data?.let {
+                    dismissLoadingDialog()
                     showSnackBar(binding.root, "Account Created Successfully")
                     Log.d("register", "created successfully ${it.toString()}")
                     binding.root.findNavController()
@@ -83,15 +90,32 @@ class RegistrationFragment : Fragment() {
             }
             is NetworkResult.Loading -> {
                 Log.d("register", "loading")
+                startLoadingDialog()
             }
             is NetworkResult.Error -> {
                 Log.d("register", "from handleNetworkResponse -> Error: ${response.message}")
+                showSnackBar(binding.root, "Account is already registered !")
+                dismissLoadingDialog()
             }
         }
     }
 
-    private fun validateUserInput(username: String, email: String, password: String): Boolean {
-        return username.isUsername() && email.isEmail() && password.isPassword()
+    private fun validateUserInput(username: String, email: String, password: String, confirmPassword:String): Boolean {
+        return username.isUsername() && email.isEmail() && password.isPassword() && (password == confirmPassword)
+    }
+
+    private fun createAlertDialog() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setView(layoutInflater.inflate(R.layout.custom_loading_dialog, null))
+        builder.setCancelable(true)
+        dialog = builder.create()
+    }
+    private fun startLoadingDialog() {
+        dialog.create()
+        dialog.show()
+    }
+    private fun dismissLoadingDialog(){
+        dialog.dismiss()
     }
 
 }
