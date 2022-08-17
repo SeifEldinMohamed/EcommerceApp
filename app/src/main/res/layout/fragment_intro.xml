@@ -21,27 +21,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52" />
+        app:layout_constraintVertical_bias="0.556" />
 
     <ImageView
         android:id="@+id/ivBackground"
-        android:layout_width="536dp"
-        android:layout_height="@dimen/_360sdp"
+        android:layout_width="566dp"
+        android:layout_height="538dp"
+        android:layout_marginBottom="224dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/background_image"
-        android:src="@mipmap/ic_intro_shape"
+        android:scaleType="fitStart"
+        android:src="@drawable/ic_blue_top_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvWelcome"
         android:layout_width="212dp"
         android:layout_height="91dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/welcomemsg"
+        android:textColor="@color/black"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
