@@ -6,6 +6,7 @@
     <string name="email">Email</string>
     <string name="profilewelcome">Hi there user!</string>
     <string name="signout">Sign Out</string>
+    <string name="placeholder">Placeholder</string>
     <string name="address">Address</string>
     <string name="save">Save</string>
     <string name="password">Password</string>
