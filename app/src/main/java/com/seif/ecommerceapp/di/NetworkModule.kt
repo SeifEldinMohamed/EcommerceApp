@@ -1,5 +1,6 @@
 package com.seif.ecommerceapp.di
 
+import android.util.Log
 import com.seif.ecommerceapp.data.local.sharedpreference.AppSharedPreference
 import com.seif.ecommerceapp.data.remote.ProductsApi
 import com.seif.ecommerceapp.utils.Constants.Companion.BASE_URL
@@ -22,13 +23,14 @@ object NetworkModule {
         return OkHttpClient.Builder()
             .addInterceptor { chain ->
                 chain.proceed(chain.request().newBuilder().also {
-                    it.addHeader(
-                        "Authorization",
-                        "Bearer ${AppSharedPreference.readStringFromSharedPreference("token", "")}"
-                    )
+                    if (chain.request().url.toString().contains("get")) {
+                        it.addHeader(
+                            "Authorization",
+                            "Bearer ${AppSharedPreference.readStringFromSharedPreference("token", "")}"
+                        )
+                    }
                 }.build())
             }.build()
-
     }
 
     @Singleton

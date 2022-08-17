@@ -22,12 +22,12 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="@string/hello_username"
-        android:textColor="@color/dark_gray"
-        android:textSize="@dimen/_16ssp"
+        android:text="@string/profile"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_19ssp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar4"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/toolbar4" />
 
@@ -42,10 +42,11 @@
         android:hint="@string/username"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/tv_signout"
         app:layout_goneMarginTop="@dimen/_8sdp">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_username"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_49ssp"
             android:drawableEnd="@drawable/ic_person"
@@ -66,6 +67,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textField2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_49ssp"
             android:drawableEnd="@drawable/ic_email"
@@ -87,6 +89,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textField1">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_address"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_49ssp"
             android:drawableEnd="@drawable/ic_home_location"
@@ -95,8 +98,9 @@
 
     <ImageView
         android:id="@+id/iv_profile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/_110sdp"
+        android:layout_height="@dimen/_110sdp"
+        android:scaleType="fitCenter"
         android:layout_marginTop="24dp"
         android:contentDescription="@string/profile_image_description"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,33 +108,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar4"
         tools:ignore="ImageContrastCheck"
-        tools:src="@tools:sample/avatars" />
+        android:src="@drawable/ic_shopping_cart" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/tv_signout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto_regular"
-        android:text="@string/profilewelcome"
-        android:textColor="@color/black"
-        android:layout_marginTop="@dimen/_8sdp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
-
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/roboto_regular"
         android:text="@string/signout"
+        android:padding="@dimen/_12sdp"
+        android:textSize="@dimen/_14ssp"
+        android:clickable="true"
+        android:focusable="true"
         android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="@+id/textView8"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/textView8"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+        app:layout_constraintEnd_toEndOf="@+id/iv_profile"
+        app:layout_constraintStart_toStartOf="@+id/iv_profile"
+        app:layout_constraintTop_toBottomOf="@+id/iv_profile" />
 
     <Button
         android:id="@+id/btn_save"
@@ -138,6 +132,9 @@
         android:layout_height="wrap_content"
         android:text="@string/save"
         android:enabled="false"
+        android:textSize="@dimen/_15ssp"
+        android:paddingTop="@dimen/_12sdp"
+        android:paddingBottom="@dimen/_12sdp"
         android:backgroundTint="@color/blue"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"

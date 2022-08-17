@@ -39,7 +39,7 @@ class HomeViewModel @Inject constructor(
     private suspend fun fetchProductsSafeCall() {
         productsResponse.postValue(NetworkResult.Loading()) // loading state until we get data from api
         if (hasInternetConnection()) {
-            Log.d("register", "request data form api")
+            Log.d("product", "request data form api")
             try {
                 repository.fetchProducts()?.let {
                     productsResponse.postValue(it)

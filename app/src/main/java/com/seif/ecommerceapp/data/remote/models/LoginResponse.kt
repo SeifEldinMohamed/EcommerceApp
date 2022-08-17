@@ -6,5 +6,6 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class LoginResponse(
     val token:String,
-    val email: String
+    val email: String,
+    val username:String
 ): Parcelable

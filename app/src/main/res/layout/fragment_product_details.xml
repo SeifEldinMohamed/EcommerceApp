@@ -54,16 +54,77 @@
             android:background="@drawable/card_background_product_details"
             android:layout_height="match_parent">
 
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/amount"
+                android:textColor="@color/dark_gray"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tv_amount"
+                android:layout_width="@dimen/_26sdp"
+                android:layout_height="@dimen/_27sdp"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/amount_tv_background"
+                android:gravity="center"
+                android:text="@string/_1"
+                android:textSize="@dimen/_15ssp"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_minus"
+                app:layout_constraintStart_toEndOf="@+id/btn_minus"
+                app:layout_constraintTop_toTopOf="@+id/btn_minus" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_plus"
+                android:layout_width="@dimen/_29sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_marginStart="16dp"
+                android:backgroundTint="@color/blue"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:text="@string/_plus"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                app:cornerRadius="@dimen/_4sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_minus"
+                app:layout_constraintStart_toEndOf="@+id/tv_amount"
+                app:layout_constraintTop_toTopOf="@+id/btn_minus"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_minus"
+                android:layout_width="@dimen/_29sdp"
+                android:layout_height="@dimen/_36sdp"
+                android:layout_marginStart="88dp"
+                android:backgroundTint="@color/blue"
+                android:fontFamily="@font/roboto_bold"
+                android:gravity="center"
+                android:text="@string/_minus"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                app:cornerRadius="@dimen/_4sdp"
+                app:layout_constraintBottom_toBottomOf="@+id/textView2"
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toTopOf="@+id/textView2"
+                app:layout_constraintVertical_bias="0.476"
+                tools:ignore="TouchTargetSizeCheck" />
+
             <RadioGroup
                 android:id="@+id/radioGroup"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
                 android:gravity="center"
-                android:layout_marginTop="@dimen/_2sdp"
-                android:layout_marginStart="@dimen/_6sdp"
                 android:orientation="horizontal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView12">
+                app:layout_constraintBottom_toBottomOf="@+id/textView12"
+                app:layout_constraintStart_toEndOf="@+id/textView12"
+                app:layout_constraintTop_toTopOf="@+id/textView12">
 
                 <RadioButton
                     android:id="@+id/radio_small"
@@ -147,7 +208,7 @@
                 android:id="@+id/tv_product_description"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="@dimen/_14sdp"
                 android:fontFamily="@font/roboto_regular"
                 android:text="@string/lorem_text_product_details"
@@ -158,117 +219,35 @@
                 app:layout_constraintTop_toBottomOf="@+id/tv_product_name_details" />
 
             <TextView
-                android:id="@+id/textView9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_14sdp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="@string/color"
-                android:textColor="@color/dark_gray"
-                android:textSize="@dimen/_17ssp"
-                app:layout_constraintStart_toStartOf="@+id/tv_product_description"
-                app:layout_constraintTop_toBottomOf="@+id/tv_product_description" />
-
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_30sdp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="@string/amount"
-                android:textColor="@color/dark_gray"
-                android:textSize="@dimen/_17ssp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView12" />
-
-            <TextView
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_14sdp"
+                android:layout_marginTop="32dp"
                 android:fontFamily="@font/roboto_bold"
                 android:text="@string/your_size"
                 android:textColor="@color/dark_gray"
                 android:textSize="@dimen/_17ssp"
                 app:layout_constraintStart_toStartOf="@+id/tv_product_description"
-                app:layout_constraintTop_toBottomOf="@+id/textView9" />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cv_color"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:layout_marginStart="@dimen/_24sdp"
-                app:cardBackgroundColor="@color/black"
-                app:cardCornerRadius="@dimen/_20sdp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView9"
-                app:layout_constraintStart_toEndOf="@+id/textView9"
-                app:layout_constraintTop_toTopOf="@+id/textView9" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_plus"
-                android:layout_width="@dimen/_29sdp"
-                android:layout_height="@dimen/_36sdp"
-                android:layout_marginTop="@dimen/_6sdp"
-                android:layout_marginEnd="@dimen/_12sdp"
-                android:backgroundTint="@color/blue"
-                android:gravity="center"
-                android:text="@string/_plus"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_12ssp"
-                android:fontFamily="@font/roboto_bold"
-                app:cornerRadius="@dimen/_4sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView11"
-                tools:ignore="TouchTargetSizeCheck" />
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_minus"
-                android:layout_width="@dimen/_29sdp"
-                android:layout_height="@dimen/_36sdp"
-                android:layout_marginTop="@dimen/_6sdp"
-                android:backgroundTint="@color/blue"
-                android:gravity="center"
-                android:text="@string/_minus"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_12ssp"
-                android:fontFamily="@font/roboto_bold"
-                app:cornerRadius="@dimen/_4sdp"
-                app:layout_constraintEnd_toStartOf="@+id/tv_amount"
-                app:layout_constraintTop_toBottomOf="@+id/textView11"
-                tools:ignore="TouchTargetSizeCheck" />
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tv_amount"
-                android:layout_width="@dimen/_26sdp"
-                android:layout_height="@dimen/_27sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
-                android:text="@string/_1"
-                android:textSize="@dimen/_15ssp"
-                android:gravity="center"
-                android:background="@drawable/amount_tv_background"
-                app:layout_constraintBottom_toBottomOf="@+id/btn_plus"
-                app:layout_constraintEnd_toStartOf="@+id/btn_plus"
-                app:layout_constraintTop_toTopOf="@+id/btn_plus" />
+                app:layout_constraintTop_toBottomOf="@+id/tv_product_description" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_add_to_cart"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/add_to_cart"
-                android:backgroundTint="@color/blue"
                 android:layout_marginStart="@dimen/_64sdp"
                 android:layout_marginEnd="@dimen/_64sdp"
-                android:textColor="@color/white"
+                android:backgroundTint="@color/blue"
+                android:drawableEnd="@drawable/ic_shopping_cart_nav"
                 android:drawableTint="@color/white"
                 android:paddingTop="@dimen/_10sdp"
                 android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/add_to_cart"
+                android:textColor="@color/white"
                 app:cornerRadius="@dimen/_10sdp"
-                android:drawableEnd="@drawable/ic_shopping_cart_nav"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>

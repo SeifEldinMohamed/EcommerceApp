@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import com.seif.ecommerceapp.data.local.sharedpreference.AppSharedPreference
 import com.seif.ecommerceapp.data.remote.models.Product
 import com.seif.ecommerceapp.databinding.FragmentHomeBinding
 import com.seif.ecommerceapp.utils.NetworkResult
@@ -30,6 +31,9 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         homeViewModel = ViewModelProvider(requireActivity())[HomeViewModel::class.java]
+        AppSharedPreference.init(requireContext())
+
+        binding.tvHelloUsername.text = "Hello ${AppSharedPreference.readStringFromSharedPreference("username","")}"
 
         observeProducts()
         setUpRecyclerView()

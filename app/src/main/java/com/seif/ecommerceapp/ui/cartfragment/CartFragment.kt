@@ -1,49 +1,129 @@
 package com.seif.ecommerceapp.ui.cartfragment
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.seif.ecommerceapp.R
-import com.seif.ecommerceapp.data.remote.models.CartData
+import com.seif.ecommerceapp.data.local.entities.OrderEntity
+import com.seif.ecommerceapp.data.remote.models.Product
 import com.seif.ecommerceapp.databinding.FragmentCartBinding
-import com.seif.ecommerceapp.utils.CartAdapter
-import dagger.hilt.android.qualifiers.ApplicationContext
+import dagger.hilt.android.AndroidEntryPoint
 
-class CartFragment : Fragment() {
-
-    private lateinit var binding : FragmentCartBinding
+@AndroidEntryPoint
+class CartFragment : Fragment(), OnDeleteOrderClickListener{
+    private lateinit var binding: FragmentCartBinding
+    private val ordersAdapter: OrdersAdapter by lazy { OrdersAdapter() }
+    lateinit var cartViewModel: CartViewModel
+    lateinit var orderList:List<OrderEntity>
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-
-        return inflater.inflate(R.layout.fragment_cart, container, false)
+        binding = FragmentCartBinding.inflate(inflater, container, false)
+        return binding.root
     }
-
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentCartBinding.inflate(layoutInflater)
-        val myListData: List<CartData> = List<CartData>(10){CartData("boom","boom",3,2.5)}
+        cartViewModel = ViewModelProvider(requireActivity())[CartViewModel::class.java]
 
+        setUpRecyclerView()
+        ordersAdapter.addView(binding.root)
+        ordersAdapter.addListener(this)
 
-        val recyclerView =  binding.recyclerView
-        val adapter = CartAdapter(myListData)
-
-        //recyclerView.setHasFixedSize(true)
-        recyclerView.layoutManager = LinearLayoutManager(this@CartFragment.context)
-
-        recyclerView.adapter = adapter
-
+      //  ordersAdapter.addOrders(createDummyData())
+        readOrders()
 
     }
 
+    private fun readOrders() {
+        cartViewModel.readOrders.observe(requireActivity()){
+            it?.let {
+                   ordersAdapter.addOrders(it)
+                   binding.tvSubtotal.text = "${cartViewModel.calculateTotalPrice(it)} $"
+
+            }
+        }
+    }
+
+    private fun createDummyData(): ArrayList<Product> {
+        val products = ArrayList<Product>()
+        products.add(
+            Product(
+                "Good cotton t-shirt with great price",
+                1,
+                "https://picsum.photos/id/237/200/300",
+                "TWD T-shirt",
+                20.0,
+                "S",
+            )
+        )
+        products.add(
+            Product(
+                "Good cotton t-shirt with great price",
+                1,
+                "https://picsum.photos/id/237/200/300",
+                "TWD T-shirt",
+                20.0,
+                "S",
+            )
+        )
+        products.add(
+            Product(
+                "Good cotton t-shirt with great price",
+                1,
+                "https://picsum.photos/id/237/200/300",
+                "TWD T-shirt",
+                20.0,
+                "S",
+            )
+        )
+        products.add(
+            Product(
+                "Good cotton t-shirt with great price",
+                1,
+                "https://picsum.photos/id/237/200/300",
+                "TWD T-shirt",
+                20.0,
+                "S",
+            )
+        )
+        products.add(
+            Product(
+                "Good cotton t-shirt with great price",
+                1,
+                "https://picsum.photos/id/237/200/300",
+                "TWD T-shirt",
+                20.0,
+                "S",
+            )
+        )
+        products.add(
+            Product(
+                "Good cotton t-shirt with great price",
+                1,
+                "https://picsum.photos/id/237/200/300",
+                "TWD T-shirt",
+                20.0,
+                "S",
+            )
+        )
+
+        return products
+    }
+
+    private fun setUpRecyclerView() {
+        binding.rvOrderedProducts.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvOrderedProducts.adapter = ordersAdapter
+    }
+
+    override fun onDeleteOrderClick(orderEntity: OrderEntity) {
+        cartViewModel.deleteOrder(orderEntity)
+        readOrders()
+    }
 
 }

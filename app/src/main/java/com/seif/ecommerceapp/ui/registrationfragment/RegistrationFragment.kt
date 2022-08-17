@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
 import com.seif.ecommerceapp.R
+import com.seif.ecommerceapp.data.local.sharedpreference.AppSharedPreference
 import com.seif.ecommerceapp.data.remote.models.SignupRequest
 import com.seif.ecommerceapp.data.remote.models.SignupResponse
 import com.seif.ecommerceapp.databinding.FragmentRegistrationBinding
@@ -49,6 +50,9 @@ class RegistrationFragment : Fragment() {
         val password = binding.etPassword.text.toString()
         val name = binding.etUsername.text.toString()
         val user = SignupRequest(email, name, password)
+
+        val address = binding.etAddress.text.toString()
+        AppSharedPreference.writeStringFromSharedPreference("address", address)
 
         if (validateUserInput(name, email, password)) {
             registrationViewModel.createUser(user)
