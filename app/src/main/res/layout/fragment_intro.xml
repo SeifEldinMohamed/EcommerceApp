@@ -25,16 +25,16 @@
 
     <ImageView
         android:id="@+id/ivBackground"
-        android:layout_width="566dp"
-        android:layout_height="538dp"
-        android:layout_marginBottom="224dp"
+        android:layout_width="498dp"
+        android:layout_height="512dp"
+        android:layout_marginBottom="240dp"
         android:adjustViewBounds="true"
         android:contentDescription="@string/background_image"
-        android:scaleType="fitStart"
+        android:scaleType="fitXY"
         android:src="@drawable/ic_blue_top_shape"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
