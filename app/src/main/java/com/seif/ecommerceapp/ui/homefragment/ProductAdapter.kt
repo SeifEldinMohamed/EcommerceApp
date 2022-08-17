@@ -15,9 +15,9 @@ class ProductAdapter: RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
     private var products: List<Product> = emptyList()
     class MyViewHolder(private val binding: ItemProductRowBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) {
-            binding.tvProductName.text = product.name
-            binding.tvPrice.text = product.price
-            Picasso.get().load(product.image).into(binding.ivProduct)
+            binding.tvProductName.text = product.productName
+            binding.tvPrice.text = product.price.toString()
+            Picasso.get().load(product.photo).into(binding.ivProduct)
 
             binding.cvProduct.setOnClickListener {
                 val action = HomeFragmentDirections.actionHomeFragmentToProductDetailsFragment(product)

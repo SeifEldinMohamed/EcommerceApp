@@ -78,9 +78,9 @@ class ProductDetailsFragment : Fragment() {
 
     private fun fillProductsDetails() {
         val productDetails = args.product
-        Picasso.get().load(productDetails.image).into(binding.ivProductDetails)
-        binding.tvPriceDetails.text = productDetails.price
-        binding.tvProductNameDetails.text = productDetails.name
+        Picasso.get().load(productDetails.photo).into(binding.ivProductDetails)
+        binding.tvPriceDetails.text = productDetails.price.toString()
+        binding.tvProductNameDetails.text = productDetails.productName
         binding.tvProductDescription.text = productDetails.description
     }
 
