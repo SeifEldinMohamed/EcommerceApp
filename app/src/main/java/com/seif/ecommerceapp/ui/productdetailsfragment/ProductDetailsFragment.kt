@@ -105,7 +105,7 @@ class ProductDetailsFragment : Fragment() {
 
     private fun fillProductsDetails() {
         Picasso.get().load(productDetails.photo).into(binding.ivProductDetails)
-        binding.tvPriceDetails.text = productDetails.price.toString()
+        binding.tvPriceDetails.text = "${productDetails.price.toString()} $"
         binding.tvProductNameDetails.text = productDetails.productName
         binding.tvProductDescription.text = productDetails.description
     }

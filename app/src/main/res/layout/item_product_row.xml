@@ -42,15 +42,15 @@
                 android:id="@+id/tv_product_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_6sdp"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:ellipsize="end"
                 android:fontFamily="@font/roboto_bold"
-                android:maxLines="1"
                 android:maxWidth="@dimen/_90sdp"
+                android:maxLines="1"
                 android:text="@string/product_name"
                 android:textColor="@color/dark_gray"
                 android:textSize="@dimen/_12ssp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/iv_product" />
 
@@ -68,16 +68,6 @@
                 app:layout_constraintStart_toStartOf="@+id/tv_product_name"
                 app:layout_constraintTop_toBottomOf="@+id/tv_product_name" />
 
-            <ImageView
-                android:id="@+id/iv_favourite"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/_12sdp"
-                android:contentDescription="@string/favourite_image_description"
-                app:layout_constraintBottom_toBottomOf="@+id/tv_price"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/tv_product_name"
-                app:srcCompat="@drawable/ic_favorite_border" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
