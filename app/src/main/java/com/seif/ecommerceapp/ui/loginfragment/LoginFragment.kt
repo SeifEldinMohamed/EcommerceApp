@@ -84,6 +84,7 @@ class LoginFragment : Fragment() {
                     AppSharedPreference.writeStringFromSharedPreference("email", it.email)
                     AppSharedPreference.writeStringFromSharedPreference("token", it.token)
                     AppSharedPreference.writeStringFromSharedPreference("username", it.username)
+                    AppSharedPreference.writeStringFromSharedPreference("login_status", "true")
 
                     startActivity(Intent(requireContext(), HomeActivity::class.java))
                     requireActivity().finish() // to finish start activity

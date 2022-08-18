@@ -1,11 +1,13 @@
 package com.seif.ecommerceapp.ui.profilefragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.seif.ecommerceapp.R
+import com.seif.ecommerceapp.StartActivity
 import com.seif.ecommerceapp.data.local.sharedpreference.AppSharedPreference
 import com.seif.ecommerceapp.databinding.FragmentProfileBinding
 
@@ -32,6 +34,12 @@ lateinit var binding: FragmentProfileBinding
         }
         AppSharedPreference.readStringFromSharedPreference("email","null")?.let {
             binding.etEmail.setText(it)
+        }
+        binding.tvSignout.setOnClickListener {
+            AppSharedPreference.init(requireContext())
+            AppSharedPreference.writeStringFromSharedPreference("login_status", "false")
+            startActivity(Intent(requireContext(), StartActivity::class.java))
+            requireActivity().finish()
         }
     }
 

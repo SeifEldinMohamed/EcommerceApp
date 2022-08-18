@@ -116,7 +116,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:fontFamily="@font/roboto_medium"
-        android:text="@string/signout"
+        android:text="@string/sign_out"
         android:padding="@dimen/_12sdp"
         android:textSize="@dimen/_14ssp"
         android:clickable="true"
