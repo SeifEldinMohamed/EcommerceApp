@@ -15,7 +15,7 @@ class ProductAdapter: RecyclerView.Adapter<ProductAdapter.MyViewHolder>() {
     class MyViewHolder(private val binding: ItemProductRowBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(product: Product) {
             binding.tvProductName.text = product.productName
-            binding.tvPrice.text = "${product.price.toInt()} $"
+            binding.tvPrice.text = "${product.price} $"
             Picasso.get().load(product.photo).into(binding.ivProduct)
 
             binding.cvProduct.setOnClickListener {

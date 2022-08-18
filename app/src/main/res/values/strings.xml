@@ -50,4 +50,6 @@
     <string name="amount_4">Amount: 4</string>
     <string name="_0">0 $</string>
     <string name="background_image">background image</string>
+    <string name="your_cart_is_empty">Your Cart is Empty</string>
+    <string name="empty_shopping_cart_image_description">empty shopping cart image description</string>
 </resources>

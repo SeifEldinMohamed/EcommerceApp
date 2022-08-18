@@ -24,6 +24,7 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,9 +36,9 @@
         android:text="@string/cart"
         android:textColor="@color/black"
         android:textSize="@dimen/_19ssp"
-        app:layout_constraintBottom_toTopOf="@+id/rv_ordered_products"
         app:layout_constraintEnd_toEndOf="@+id/tbCart"
         app:layout_constraintStart_toStartOf="@+id/tbCart"
+        app:layout_constraintBottom_toBottomOf="@+id/tbCart"
         app:layout_constraintTop_toTopOf="@+id/tbCart" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -92,6 +93,33 @@
             app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/iv_empty_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="248dp"
+        android:contentDescription="@string/empty_shopping_cart_image_description"
+        android:src="@drawable/ic_empty_cart"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_empty_cart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/your_cart_is_empty"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20ssp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/iv_empty_cart"
+        app:layout_constraintStart_toStartOf="@+id/iv_empty_cart"
+        app:layout_constraintTop_toBottomOf="@+id/iv_empty_cart" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

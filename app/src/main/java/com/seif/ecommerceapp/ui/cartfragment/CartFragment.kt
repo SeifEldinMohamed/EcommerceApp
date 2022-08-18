@@ -13,11 +13,11 @@ import com.seif.ecommerceapp.databinding.FragmentCartBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CartFragment : Fragment(), OnDeleteOrderClickListener{
+class CartFragment : Fragment(), OnDeleteOrderClickListener {
     private lateinit var binding: FragmentCartBinding
     private val ordersAdapter: OrdersAdapter by lazy { OrdersAdapter() }
     lateinit var cartViewModel: CartViewModel
-    lateinit var orderList:List<OrderEntity>
+    lateinit var orderList: List<OrderEntity>
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -35,17 +35,25 @@ class CartFragment : Fragment(), OnDeleteOrderClickListener{
         ordersAdapter.addView(binding.root)
         ordersAdapter.addListener(this)
 
-      //  ordersAdapter.addOrders(createDummyData())
+        //  ordersAdapter.addOrders(createDummyData())
         readOrders()
 
     }
 
     private fun readOrders() {
-        cartViewModel.readOrders.observe(requireActivity()){
+        cartViewModel.readOrders.observe(requireActivity()) {
             it?.let {
-                   ordersAdapter.addOrders(it)
-                   binding.tvSubtotal.text = "${cartViewModel.calculateTotalPrice(it)} $"
-
+                ordersAdapter.addOrders(it)
+                binding.tvSubtotal.text = "${cartViewModel.calculateTotalPrice(it)} $"
+                if (it.isEmpty()) {
+                    binding.tvEmptyCart.visibility = View.VISIBLE
+                    binding.ivEmptyCart.visibility = View.VISIBLE
+                    binding.rvOrderedProducts.visibility = View.GONE
+                } else {
+                    binding.tvEmptyCart.visibility = View.GONE
+                    binding.ivEmptyCart.visibility = View.GONE
+                    binding.rvOrderedProducts.visibility = View.VISIBLE
+                }
             }
         }
     }
