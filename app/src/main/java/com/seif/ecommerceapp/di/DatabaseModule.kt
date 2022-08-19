@@ -14,7 +14,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 object DatabaseModule {
 
-    @Singleton // dentifies a type that the injector only instantiates once. Not inherited.
+    @Singleton // identifies a type that the injector only instantiates once. Not inherited.
     @Provides
     fun provideDatabase(
         @ApplicationContext context:Context
